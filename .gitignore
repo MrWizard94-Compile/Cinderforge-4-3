@@ -1,0 +1,8 @@
+# Godot editor import/cache state and local credentials are not source.
+.godot/
+*.import
+.env
+.env.*
+!.env.example
+*.pem
+*.key

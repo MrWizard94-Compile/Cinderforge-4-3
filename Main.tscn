@@ -1,0 +1,64 @@
+[gd_scene load_steps=2 format=3 uid="uid://cinder_main"]
+
+[ext_resource type="Script" path="res://scripts/Arena.gd" id="1_arena"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_arena")
+
+[node name="World" type="Node2D" parent="."]
+
+[node name="Floor" type="Polygon2D" parent="World"]
+visible = false
+color = Color(0.055, 0.035, 0.027, 1)
+polygon = PackedVector2Array(200, 120, 1080, 120, 1120, 600, 160, 600)
+
+[node name="FloorTiles" type="Node2D" parent="World"]
+z_index = -2
+
+[node name="FloorEdge" type="Polygon2D" parent="World"]
+z_index = -1
+color = Color(0.9, 0.35, 0.08, 0.25)
+polygon = PackedVector2Array(190, 110, 1090, 110, 1135, 610, 145, 610)
+
+[node name="Spawns" type="Node2D" parent="World"]
+
+[node name="Enemies" type="Node2D" parent="World"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(640, 360)
+enabled = true
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="HeatBg" type="ColorRect" parent="UI"]
+offset_left = 48.0
+offset_top = 16.0
+offset_right = 448.0
+offset_bottom = 32.0
+color = Color(0.12, 0.08, 0.06, 0.9)
+
+[node name="HeatFill" type="ColorRect" parent="UI"]
+offset_left = 48.0
+offset_top = 16.0
+offset_right = 448.0
+offset_bottom = 32.0
+pivot_offset = Vector2(0, 8)
+color = Color(1, 0.478, 0.149, 1)
+scale = Vector2(0.05, 1)
+
+[node name="BeatPip" type="ColorRect" parent="UI"]
+offset_left = 620.0
+offset_top = 12.0
+offset_right = 644.0
+offset_bottom = 36.0
+pivot_offset = Vector2(12, 12)
+color = Color(1, 0.7, 0.25, 0.8)
+
+[node name="Info" type="Label" parent="UI"]
+offset_left = 48.0
+offset_top = 44.0
+offset_right = 900.0
+offset_bottom = 220.0
+theme_override_colors/font_color = Color(0.95, 0.9, 0.82, 1)
+theme_override_font_sizes/font_size = 18
+text = "CINDERFORGE"
